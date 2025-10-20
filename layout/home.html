@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Museum of Non-Existent Things — Home</title>
+  <style>
+    :root{
+      --bg: #0f0f12;
+      --ink: #e8e8ef;
+      --muted: #b7b7c7;
+      --accent: #6ea8ff;
+      --card: #17171c;
+      --ring: rgba(255,255,255,0.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, #1e1e25 0%, var(--bg) 60%) fixed;
+      color: var(--ink);
+      line-height:1.6;
+      min-height:100svh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* Top navigation */
+    header{
+      padding: 24px 16px;
+      display:flex;
+      justify-content:center;
+    }
+    nav{
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: 14px;
+      padding: 10px 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    nav a{
+      color: var(--muted);
+      text-decoration:none;
+      margin: 0 10px;
+      padding: 6px 8px;
+      border-radius: 8px;
+    }
+    nav a:hover, nav a[aria-current="page"]{
+      color: var(--ink);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* Main content */
+    main{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap: 28px;
+      padding: 24px 16px 64px;
+    }
+    .card{
+      max-width: 860px;
+      width: min(90vw, 860px);
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: 16px;
+      padding: clamp(18px, 5vw, 34px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    .title{
+      margin: 0 0 6px 0;
+      font-size: clamp(26px, 3.4vw, 38px);
+      letter-spacing: 0.5px;
+    }
+    .tagline{
+      margin:0 0 14px 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .mystery{
+      margin: 18px 0 0 0;
+      font-size: 1.05rem;
+    }
+
+    /* Enter button */
+    .enter-wrap{
+      display:flex;
+      justify-content:center;
+      width:100%;
+    }
+    .enter{
+      display:inline-block;
+      text-decoration:none;
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ring);
+      border-radius: 14px;
+      padding: 12px 22px;
+      font-weight: 600;
+      letter-spacing: .3px;
+      transition: transform .08s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+    }
+    .enter:hover{
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.18);
+      transform: translateY(-1px);
+    }
+    .enter:active{
+      transform: translateY(0);
+    }
+
+    footer{
+      color: var(--muted);
+      text-align:center;
+      font-size: 0.9rem;
+      padding: 28px 16px 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a> |
+      <a href="gallery.html">Gallery</a> |
+      <a href="artifacts.html">Artifacts</a> |
+      <a href="sources.html">Sources</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="site-title">
+      <h1 id="site-title" class="title">Museum of Non-Existent Things</h1>
+      <p class="tagline">A quiet threshold between what we imagine and what imagines us back.</p>
+
+      <p class="mystery">
+        Whispered online as a “character that isn’t a character,” <em>duang</em> began as a sound,
+        then became a sign—an internet echo often described as a non-existent Chinese character.
+        It has no fixed strokes, yet it travels; no official body, yet it gathers meaning. This
+        museum follows that ripple: a gallery of myths, concepts, blueprints, and digital phantoms
+        that move people without ever taking a solid form. Step carefully—some absences feel almost real.
+      </p>
+    </section>
+
+    <div class="enter-wrap">
+      <a class="enter" href="gallery.html" aria-label="Enter the gallery">ENTER — if you dare</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 • Curated by Fernando & team · Syracuse University
+  </footer>
+</body>
+</html>

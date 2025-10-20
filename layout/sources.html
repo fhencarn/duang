@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Museum of Non-Existent Things — Sources</title>
+  <style>
+    :root{
+      --bg: #0f0f12;
+      --ink: #e8e8ef;
+      --muted: #b7b7c7;
+      --ring: rgba(255,255,255,0.08);
+      --card: #17171c;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1000px 600px at 50% -10%, #1e1e25 0%, var(--bg) 60%) fixed;
+      color: var(--ink);
+      line-height:1.6;
+    }
+
+    header{
+      padding: 24px 16px;
+      display:flex;
+      justify-content:center;
+    }
+    nav{
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: 14px;
+      padding: 10px 16px;
+    }
+    nav a{
+      color: var(--muted);
+      text-decoration:none;
+      margin: 0 10px;
+      padding: 6px 8px;
+      border-radius: 8px;
+    }
+    nav a:hover, nav a[aria-current="page"]{
+      color: var(--ink);
+      background: rgba(255,255,255,0.06);
+    }
+
+    main{
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 16px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    section{
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    h1{
+      margin-top: 0;
+      font-size: 1.9rem;
+      text-align:center;
+    }
+    h2{
+      font-size: 1.3rem;
+      margin-top: 24px;
+      color: var(--ink);
+    }
+    ul{
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li{
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+    a{
+      color: #6ea8ff;
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+
+    footer{
+      color: var(--muted);
+      text-align:center;
+      font-size: 0.9rem;
+      padding: 40px 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav aria-label="Primary">
+      <a href="index.html">Home</a> |
+      <a href="gallery.html">Gallery</a> |
+      <a href="artifacts.html">Artifacts</a> |
+      <a href="sources.html" aria-current="page">Sources</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Sources & References</h1>
+      <p>Below are the materials, readings, and visual inspirations referenced throughout <em>The Museum of Non-Existent Things</em>. Replace these placeholders with your final bibliography or media credits.</p>
+
+      <h2>Written References</h2>
+      <ul>
+        <li>{Insert citation here — e.g., Plato. <em>The Republic</em>. Translated by G.M.A. Grube, Hackett Publishing, 1992.}</li>
+        <li>{Insert citation here — e.g., Campbell, Joseph. <em>The Hero with a Thousand Faces</em>. Princeton University Press, 1949.}</li>
+      </ul>
+
+      <h2>Digital & Visual Sources</h2>
+      <ul>
+        <li>{Insert source here — e.g., “Lil Miquela Official Instagram.” Instagram, https://www.instagram.com/lilmiquela/}</li>
+        <li>{Insert AI image source here — e.g., DALL·E 3 generated image, 2025.}</li>
+      </ul>
+
+      <h2>Music / Audio (if applicable)</h2>
+      <ul>
+        <li>{Insert credit here — e.g., Background ambience by Pixabay Music, https://pixabay.com/music.}</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 • Museum of Non-Existent Things
+  </footer>
+</body>
+</html>

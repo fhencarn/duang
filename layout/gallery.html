@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Museum of Non-Existent Things — Gallery</title>
+  <style>
+    :root{
+      --bg: #0f0f12;
+      --ink: #e8e8ef;
+      --muted: #b7b7c7;
+      --ring: rgba(255,255,255,0.08);
+      --card: #17171c;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1000px 600px at 50% -10%, #1e1e25 0%, var(--bg) 60%) fixed;
+      color: var(--ink);
+      line-height:1.6;
+    }
+
+    header{
+      padding: 24px 16px;
+      display:flex;
+      justify-content:center;
+    }
+    nav{
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: 14px;
+      padding: 10px 16px;
+    }
+    nav a{
+      color: var(--muted);
+      text-decoration:none;
+      margin: 0 10px;
+      padding: 6px 8px;
+      border-radius: 8px;
+    }
+    nav a:hover, nav a[aria-current="page"]{
+      color: var(--ink);
+      background: rgba(255,255,255,0.06);
+    }
+
+    main{
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 16px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    section{
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    section img{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius: 12px;
+      margin-bottom: 18px;
+    }
+    h2{
+      margin-top: 0;
+      font-size: 1.6rem;
+      color: var(--ink);
+    }
+    p{
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    footer{
+      color: var(--muted);
+      text-align:center;
+      font-size: 0.9rem;
+      padding: 40px 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav aria-label="Primary">
+      <a href="index.html">Home</a> |
+      <a href="gallery.html" aria-current="page">Gallery</a> |
+      <a href="artifacts.html">Artifacts</a> |
+      <a href="sources.html">Sources</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Imaginary Things</h2>
+      <img src="imagehere.jpeg" alt="Imaginary Things placeholder image" />
+      <p>{input Label text here}</p>
+    </section>
+
+    <section>
+      <h2>Conceptual Things</h2>
+      <img src="imagehere.jpeg" alt="Conceptual Things placeholder image" />
+      <p>{input Label text here}</p>
+    </section>
+
+    <section>
+      <h2>Unrealized Things</h2>
+      <img src="imagehere.jpeg" alt="Unrealized Things placeholder image" />
+      <p>{input Label text here}</p>
+    </section>
+
+    <section>
+      <h2>Digital Non-Existence</h2>
+      <img src="imagehere.jpeg" alt="Digital Non-Existence placeholder image" />
+      <p>{input Label text here}</p>
+    </section>
+
+    <section>
+      <h2>Philosophical Lens</h2>
+      <img src="imagehere.jpeg" alt="Philosophical Lens placeholder image" />
+      <p>{input Label text here}</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 • Museum of Non-Existent Things
+  </footer>
+</body>
+</html>

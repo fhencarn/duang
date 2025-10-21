@@ -6,8 +6,60 @@
   <title>Museum of Non-Existent Things</title>
   <!-- If style.css is next to this file, use this exact path -->
   <link rel="stylesheet" href="./style.css?v=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #000;
+      color: #fff;
+    }
+
+    /* Button styling */
+    #muteButton {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      font-size: 18px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #muteButton:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  </style>
 </head>
 <body class="home-theme">
+  <audio id="bgMusic" autoplay loop>
+    <source src="../music/alien.m4a" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <button id="muteButton">🔊</button>
+
+  <script>
+    const music = document.getElementById('bgMusic');
+    const button = document.getElementById('muteButton');
+
+    // Handle browsers that block autoplay
+    window.addEventListener('click', () => {
+      if (music.paused) {
+        music.play();
+      }
+    });
+
+    // Toggle mute/unmute
+    button.addEventListener('click', () => {
+      music.muted = !music.muted;
+      button.textContent = music.muted ? '🔇' : '🔊';
+    });
+  </script>
+
   <nav>
     <a href="index.html">Home</a> |
     <a href="gallery.html">Gallery</a> |

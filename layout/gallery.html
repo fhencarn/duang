@@ -4,34 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Museum of Non-Existent Things — Gallery</title>
-  <link rel="stylesheet" href="style.css?v=1">
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #000;
-      color: #fff;
-    }
-
-    /* Button styling */
-    #muteButton {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background-color: rgba(255, 255, 255, 0.2);
-      border: none;
-      color: white;
-      font-size: 18px;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    #muteButton:hover {
-      background-color: rgba(255, 255, 255, 0.4);
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css?v=1">
 </head>
 <body>
   <audio id="bgMusic" autoplay loop>
@@ -45,108 +18,303 @@
     const music = document.getElementById('bgMusic');
     const button = document.getElementById('muteButton');
 
-    // Handle browsers that block autoplay
     window.addEventListener('click', () => {
       if (music.paused) {
         music.play();
       }
     });
 
-    // Toggle mute/unmute
     button.addEventListener('click', () => {
       music.muted = !music.muted;
       button.textContent = music.muted ? '🔇' : '🔊';
     });
   </script>
-  <header>
-    <nav aria-label="Primary">
-      <a href="index.html">Home</a> |
-      <a href="gallery.html" aria-current="page">Gallery</a> |
-      <a href="artifacts.html">Artifacts</a> |
-      <a href="sources.html">Sources</a>
-    </nav>
+
+  <header class="site-header">
+    <div class="max-width frame">
+      <a class="logo" href="index.html">Museum of Non-Existent Things</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>What does it mean for something to not exist?   </h2>
-      <p>For something to not exist is has to be zero. For something to be zero there has to be nothing there. The best answer would be not to answer the existing question. To speak about the non existentance of something brings it to existentse for the sake of the example. With just words and thoughts something that was non-existent becomes existent. In some shape or form what we believe or think becomes true. But once we stop thinking about does it go away? And I mean completely, does it go back to not existing? Lets say I had a organe, once I eat it, does it still exist? If not, how come? The orange might not physically exist but its still something that was real, I mean I was holding it and now its in my body. Not the same orange you knew but still there, just in pieces. Everything exists but just in pieces 
-      </p>
-    </section>
+  <main class="max-width">
+    <div class="content-panel">
+      <section class="gallery-intro">
+        <h1>Gallery of Non-Existent Things</h1>
+        <p>Every image here is a primary artifact recovered from the V.T.C. archive. The cards below pair each exhibit with its classification and narrative. Tap “View Record” to open the full log.</p>
+      </section>
 
-    <section>
-      <h2>Dragons </h2>
-      <img src="../images/pest_control.png" alt="Imaginary Things placeholder image" />
-      <p>Dragons be Wear.. There was a phase that everyone went through of wanting to own one of these. Giant, fire-breathing lizards that can take to the skies and incinerate the town in a few seconds. The fantasy ended the moment someone actually saw one—its shadow swept across the fields first, blotting out the sun, followed by a low rumble that shook the windows. It wasn’t the elegant creature from the storybooks but something ancient and heavy with smoke, eyes burning with the memory of forgotten empires. For a breathless moment, the world felt ha small again, and everyone remembered why dragons were meant to be admired from a very safe distance. .. I should give this game a break.. 
-      </p>
-    </section>
+      <div class="gallery-grid" role="list">
+        <article class="gallery-card" role="listitem"
+          data-title="Dragons"
+          data-classification="Mythic"
+          data-image="../duangimg/Dragon.jpg"
+          data-image-alt="Museum artifact depiction of a dragon">
+          <div class="gallery-card__thumb">
+            <img loading="lazy" decoding="async" width="300" height="300" src="../duangimg/Dragon.jpg" alt="Museum artifact depiction of a dragon">
+          </div>
+          <div class="gallery-card__body">
+            <h3>Dragons</h3>
+            <p class="gallery-card__class">Mythic</p>
+            <button type="button" class="gallery-card__action">View Record</button>
+          </div>
+          <div class="gallery-card__record" hidden>
+            <p>There was a phase when everyone wanted one—giant, fire-breathing lizards that could incinerate a town in seconds. The fantasy ended the moment someone actually saw one. Its shadow swept across the fields first, blotting out the sun, followed by a low rumble that shook the windows.</p>
+            <p>It wasn’t the elegant creature from the storybooks but something ancient and heavy with smoke. For a breathless moment the world felt small again, and everyone remembered why dragons are best admired from a very safe distance.</p>
+          </div>
+        </article>
 
-    <section>
-      <h2>Virtual Currency </h2>
-      <img src="../images/imagehere.jpeg" alt="Imaginary Things placeholder image" />
-      <p>The value of virtual currency. It’s hilariously easy how right clicking and pressing “save image” can destroy a person’s life. Virtual Currency, NFTs, even ATMs are not safe. The digital age promised ownership without borders, but instead, it gave us confusion without limits. What’s real when everything can be copied? A million dollar picture means nothing if anyone can screenshot it. Yet, somehow, it still means everything. to some its status, proof, ego. Money used to be about what you could hold. Now, it’s about what you can claim. And claims, in the online world, are as fragile as a forgotten password or a crashed server. Maybe the real currency isn’t the token, or the chain, or the code. Maybe it’s belief, the collective illusion that something intangible still has worth. Because when the Wi-Fi dies, so does your fortune. </p>
-    </section>
+        <article class="gallery-card" role="listitem"
+          data-title="Virtual Currency"
+          data-classification="Digital"
+          data-image="../duangimg/bitcoin.png"
+          data-image-alt="Artifact referencing virtual currency">
+          <div class="gallery-card__thumb">
+            <img loading="lazy" decoding="async" width="300" height="300" src="../duangimg/bitcoin.png" alt="Artifact referencing virtual currency">
+          </div>
+          <div class="gallery-card__body">
+            <h3>Virtual Currency</h3>
+            <p class="gallery-card__class">Digital</p>
+            <button type="button" class="gallery-card__action">View Record</button>
+          </div>
+          <div class="gallery-card__record" hidden>
+            <p>The value of digital money is hilariously fragile. A right-click and “save image” can implode someone’s fortune. NFTs, virtual tokens, even ATMs feel flimsy. The digital age promised ownership without borders but delivered confusion without limits.</p>
+            <p>A million-dollar picture means nothing if anyone can screenshot it, yet it still means everything to someone chasing status. Money used to be what you could hold; now it’s what you can claim, and those claims are as fragile as a forgotten password.</p>
+          </div>
+        </article>
 
-    <section>
-      <h2>Free will</h2>
-      <img src="../images/imagehere.jpeg" alt="Imaginary Things placeholder image" />
-      <p>How free will isn’t free You like free things. Your actions aren’t free though. Thinking isnt free. You didn’t choose coffee this morning. Caffeine chose you. Your genes negotiated it while you were asleep. You think you like that one song? Congratulations, your dopamine receptors just signed a contract with the Spotify algorithm. There’s always someone enforcing. Someone judging. Someone listening Maybe it’s the government, maybe it’s God, or maybe it’s just your phone, the trinity of modern surveillance. You think you’re free when you close the curtains, but your smart fridge is still snitching on you for buying off-brand soda. Free will? Please. You didn’t even choose that. A marketing algorithm whispered it into your skull at 3 a.m. while you were doomscrolling. Every click is a confession. Every purchase is a prayer to the gods of targeted advertising. </p>
-    </section>
+        <article class="gallery-card" role="listitem"
+          data-title="Placebo Effect"
+          data-classification="Conceptual"
+          data-image="../duangimg/affect.png"
+          data-image-alt="Artifact illustrating the placebo effect">
+          <div class="gallery-card__thumb">
+            <img loading="lazy" decoding="async" width="300" height="300" src="../duangimg/affect.png" alt="Artifact illustrating the placebo effect">
+          </div>
+          <div class="gallery-card__body">
+            <h3>Placebo Effect</h3>
+            <p class="gallery-card__class">Conceptual</p>
+            <button type="button" class="gallery-card__action">View Record</button>
+          </div>
+          <div class="gallery-card__record" hidden>
+            <p>Thing about this: you take some shit thinking it’s gonna cure you. And it does. Then you realize it wasn’t what it said it was, yet you’re still like “what, it literally did the thing though.” That’s the placedo effect — your mind running the trick, dreams tricking you, you tricking your mind right back.</p>
+            <p>Where the fuck is the brain getting all these chemicals from? They didn’t exist before, but when you take this fake shit your mind decides to make them appear out of nowhere. Further proof that belief is all you need for something to exist.</p>
+          </div>
+        </article>
 
-    <section>
-      <h2>Ghost</h2>
-      <img src="../images/imagehere.jpeg" alt="Imaginary Things placeholder image" />
-      <p>Everyone wants proof of ghosts. Cold spots, flickering lights, footsteps in an empty hallway. As if the dead would bother performing parlor tricks just to be believed. The truth is, ghosts are everywhere and no one notices because they don’t rattle chains anymore. In inactive accounts that still recommend you as a friend. In houses that remember where the furniture used to be and make the air feel wrong when you move it. A ghost isn’t a sheet with eye holes, it's unfinished business with nobody left to deal with. </p>
-    </section>
+        <article class="gallery-card" role="listitem"
+          data-title="Free Will"
+          data-classification="Conceptual"
+          data-image="../duangimg/free.png"
+          data-image-alt="Artifact symbolizing free will">
+          <div class="gallery-card__thumb">
+            <img loading="lazy" decoding="async" width="300" height="300" src="../duangimg/free.png" alt="Artifact symbolizing free will">
+          </div>
+          <div class="gallery-card__body">
+            <h3>Free Will</h3>
+            <p class="gallery-card__class">Conceptual</p>
+            <button type="button" class="gallery-card__action">View Record</button>
+          </div>
+          <div class="gallery-card__record" hidden>
+            <p>You like free things. Your choices aren’t free though. Caffeine chose you this morning; your genes negotiated it overnight. Your dopamine receptors sign contracts with algorithms before you can object.</p>
+            <p>Someone is always enforcing, judging, listening. Maybe it’s the government, maybe it’s your phone. Free will? You didn’t even pick it. A marketing campaign whispered it into your skull at 3 a.m.</p>
+          </div>
+        </article>
 
-    <section>
-      <h2>Luck</h2>
-      <img src="../images/imagehere.jpeg" alt="Imaginary Things placeholder image" />
-      <p>Luck is the only thing everyone believes in but no one wants to credit. We call it timing, opportunity, being “in the right place,” as if that makes it fairer. Two people work just as hard one gets a miracle, the other gets a lesson. History remembers one as talented and the other as unlucky, which is just a polite way of saying the universe didn’t bother to look their way. Luck has no personality, no moral code. It doesn’t reward effort or punish laziness; it just happens. A delayed train, a wrong turn, a message sent five minutes later than intended tiny accidents that quietly decide entire lives. We pretend success is a formula because randomness is terrifying. But deep down, everyone knows the truth: skill gets you to the door, luck decides whether it’s unlocked. And once you’re inside, you’ll swear you earned the view. </p>
-    </section>
+        <article class="gallery-card" role="listitem"
+          data-title="Ghosts"
+          data-classification="Imaginary"
+          data-image="../duangimg/ghost.png"
+          data-image-alt="Artifact showing ghostly imprint">
+          <div class="gallery-card__thumb">
+            <img loading="lazy" decoding="async" width="300" height="300" src="../duangimg/ghost.png" alt="Artifact showing ghostly imprint">
+          </div>
+          <div class="gallery-card__body">
+            <h3>Ghosts</h3>
+            <p class="gallery-card__class">Imaginary</p>
+            <button type="button" class="gallery-card__action">View Record</button>
+          </div>
+          <div class="gallery-card__record" hidden>
+            <p>Cold spots, flickering lights, footsteps in an empty hallway — parlor tricks for the living. Real ghosts prefer quieter networks.</p>
+            <p>They hide in inactive accounts that still recommend you as a friend, in houses that remember where the furniture sat and make the air feel wrong when you move it. A ghost isn’t a sheet with eyes; it’s unfinished business with nobody left to handle it.</p>
+          </div>
+        </article>
 
-    <section>
-      <h2>Dreams</h2>
-      <img src="../images/imagehere.jpeg" alt="Imaginary Things placeholder image" />
-      <p>Can you even remeber the last vivid dream you had? What happens in that world stays in that world. No one knows what you do in your dreams. People don’t ask either. Dreams are controlled by your brain and your brain can be the biggest perciver of them all. It all feels so real but none of it exists. Isn’t it scary how you forget your dreams. Like you lived those moments for a while but once you open your eyes you only have faint memories. Easy to forget and hard to remember.   </p>
-    </section>
+        <article class="gallery-card" role="listitem"
+          data-title="Luck"
+          data-classification="Conceptual"
+          data-image="../duangimg/luck.png"
+          data-image-alt="Artifact depicting luck and randomness">
+          <div class="gallery-card__thumb">
+            <img loading="lazy" decoding="async" width="300" height="300" src="../duangimg/luck.png" alt="Artifact depicting luck and randomness">
+          </div>
+          <div class="gallery-card__body">
+            <h3>Luck</h3>
+            <p class="gallery-card__class">Conceptual</p>
+            <button type="button" class="gallery-card__action">View Record</button>
+          </div>
+          <div class="gallery-card__record" hidden>
+            <p>Luck is the only thing everyone believes in but no one credits out loud. We rename it timing or opportunity so it sounds fair. Two people work just as hard; one gets a miracle, the other gets a lesson.</p>
+            <p>Luck has no morality. It doesn’t reward effort or punish laziness; it just happens. Skill gets you to the door, luck decides whether it’s unlocked, and once you’re inside you’ll swear you earned the view.</p>
+          </div>
+        </article>
 
-    <section>
-      <h2>A square circle</h2>
-      <img src="../images/imagehere.jpeg" alt="Imaginary Things placeholder image" />
-      <p>
-        Which means constructing a square with the same area as a circle. That does not sound hard at all. Why don’t we make a circle out of something easy to mush. Then use tools to squah it into a square. Bam, square cirlce. But... I was thinking of a Circle that appears as sqaure to the human eye. Sure this can be solved with optical illusions. But in a literal sense, if the 4th dimensions is the way we think it is then could this achieabel. In a 2d world if a 3d object were to pass through then it would look 1d. Which would be a line I’m guessing. Since we are 3d and see things in 2d. If a 4d object passed through our 3d world then what would the 2d shape be. The real questions should be what type of 4d circle would create, what we call, a square in the 3d world.  
-      </p>
-    </section>
+        <article class="gallery-card" role="listitem"
+          data-title="Dreams"
+          data-classification="Imaginary"
+          data-image="../duangimg/dream.png"
+          data-image-alt="Artifact depicting dream fragments">
+          <div class="gallery-card__thumb">
+            <img loading="lazy" decoding="async" width="300" height="300" src="../duangimg/dream.png" alt="Artifact depicting dream fragments">
+          </div>
+          <div class="gallery-card__body">
+            <h3>Dreams</h3>
+            <p class="gallery-card__class">Imaginary</p>
+            <button type="button" class="gallery-card__action">View Record</button>
+          </div>
+          <div class="gallery-card__record" hidden>
+            <p>Can you even remember the last vivid dream? That world dissolves the second you open your eyes. Dreams are curated by your brain, the best deceiver you own, making everything feel real despite the emptiness.</p>
+            <p>Isn’t it terrifying how fast you forget them? You lived those moments, but once you wake, only faint scraps remain — easy to lose, hard to reclaim.</p>
+          </div>
+        </article>
 
-    <section>
-      <h2></h2>
-      <img src="../images/imagehere.jpeg" alt="Imaginary Things placeholder image" />
-      <p>
-        
-      </p>
-    </section>
+        <article class="gallery-card" role="listitem"
+          data-title="A Square Circle"
+          data-classification="Conceptual"
+          data-image="../duangimg/circle.png"
+          data-image-alt="Artifact exploring the square circle paradox">
+          <div class="gallery-card__thumb">
+            <img loading="lazy" decoding="async" width="300" height="300" src="../duangimg/circle.png" alt="Artifact exploring the square circle paradox">
+          </div>
+          <div class="gallery-card__body">
+            <h3>A Square Circle</h3>
+            <p class="gallery-card__class">Conceptual</p>
+            <button type="button" class="gallery-card__action">View Record</button>
+          </div>
+          <div class="gallery-card__record" hidden>
+            <p>Constructing a square with the same area as a circle sounds easy if you’re willing to cheat. But what about a circle that appears square to the human eye?</p>
+            <p>If the fourth dimension behaves how we hope, maybe there’s a version of a circle whose intersection with our 3D world looks perfectly square. In a 2D world a 3D object becomes a line; maybe here, a 4D circle becomes the square we keep imagining.</p>
+          </div>
+        </article>
 
-    <section>
-      <h2></h2>
-      <img src="../images/imagehere.jpeg" alt="Imaginary Things placeholder image" />
-      <p>
-        
-      </p>
-    </section>
+        <article class="gallery-card" role="listitem"
+          data-title="White Holes"
+          data-classification="Conceptual"
+          data-image="../duangimg/whitehole.png"
+          data-image-alt="Artifact illustrating a white hole anomaly">
+          <div class="gallery-card__thumb">
+            <img loading="lazy" decoding="async" width="300" height="300" src="../duangimg/whitehole.png" alt="Artifact illustrating a white hole anomaly">
+          </div>
+          <div class="gallery-card__body">
+            <h3>White Holes</h3>
+            <p class="gallery-card__class">Conceptual</p>
+            <button type="button" class="gallery-card__action">View Record</button>
+          </div>
+          <div class="gallery-card__record" hidden>
+            <p>Black holes are apparently extremely concentrated balls of mass. Whiteholes theoretically spew out mass like a cosmic water fountain. We have yet to find one in real life, but if we did what could that tell us about the universe? What do we get when a black hole and a white hole meet — something that sucks everything colliding with something that spews anything?</p>
+            <p>You can’t escape a black hole, and you can’t enter a white one. How long can white holes live for? Given their properties, would everything just be the exact opposite? Maybe the mass of a white hole can’t be measured, and maybe its existence is too brief to clock at all while black holes live for years. Whiteholes might be something that happens within seconds.</p>
+          </div>
+        </article>
 
-    <section>
-      <h2></h2>
-      <img src="../images/imagehere.jpeg" alt="Imaginary Things placeholder image" />
-      <p>
-        
-      </p>
-    </section>
-
+        <article class="gallery-card" role="listitem"
+          data-title="Elior & Liliweiss"
+          data-classification="Mythic"
+          data-image="../duangimg/Elinor.jpg"
+          data-image-alt="Recovered photograph tied to Elior and Liliweiss">
+          <div class="gallery-card__thumb">
+            <img loading="lazy" decoding="async" width="300" height="300" src="../duangimg/Elinor.jpg" alt="Recovered photograph tied to Elior and Liliweiss">
+          </div>
+          <div class="gallery-card__body">
+            <h3>Elior &amp; Liliweiss</h3>
+            <p class="gallery-card__class">Mythic</p>
+            <button type="button" class="gallery-card__action">View Record</button>
+          </div>
+          <div class="gallery-card__record" hidden>
+            <p>My name is Elior. I was a researcher at an old V.T.C. lab back in the day. For the last year, I've just wanted to survive till the next day.</p>
+            <p>Too much sorrow in this world. Too much war. Too much fighting. It worsened when they* came, flying down from the skies with their alien technology. That's why I sat in my cellar for months creating the ultimate superweapon, a peacemaker. Forged with my own two hands and powered by a mechanical heart, my creation, Liliweiss, was born.</p>
+            <p>She was my world. Before deployment, it was like she was my child: tuned to the finest point, able to laugh, dance, and sing. My own creation — a daughter I never knew I had.</p>
+            <p>Time stopped. Liliweiss was taken, brainwashed, turned against humanity. We were crushed. People fled underground and lost the will to live. I've lost my guiding light, so I will one day resurface to find her.</p>
+          </div>
+        </article>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    © 2025 • Museum of Non-Existent Things
-  </footer>
+  <div class="gallery-modal" id="galleryModal" aria-hidden="true">
+    <div class="gallery-modal__backdrop" data-close="true"></div>
+    <div class="gallery-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="galleryModalTitle">
+      <button class="gallery-modal__close" type="button" aria-label="Close record" data-close="true">✕</button>
+      <div class="gallery-modal__media">
+        <img id="galleryModalImage" src="" alt="">
+      </div>
+      <div class="gallery-modal__content">
+        <p class="gallery-modal__class" id="galleryModalClass"></p>
+        <h3 id="galleryModalTitle"></h3>
+        <div id="galleryModalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 • Museum of Non-Existent Things</footer>
+
+  <script>
+    (function() {
+      const cards = document.querySelectorAll('.gallery-card');
+      const modal = document.getElementById('galleryModal');
+      const modalImage = document.getElementById('galleryModalImage');
+      const modalTitle = document.getElementById('galleryModalTitle');
+      const modalBody = document.getElementById('galleryModalBody');
+      const modalClass = document.getElementById('galleryModalClass');
+      const closeTargets = modal.querySelectorAll('[data-close="true"]');
+      let lastFocused;
+
+      function openModal(card) {
+        lastFocused = document.activeElement;
+        modalImage.src = card.dataset.image;
+        modalImage.alt = card.dataset.imageAlt || card.dataset.title;
+        modalTitle.textContent = card.dataset.title;
+        modalClass.textContent = card.dataset.classification;
+        const record = card.querySelector('.gallery-card__record');
+        modalBody.innerHTML = record ? record.innerHTML : '';
+        modal.setAttribute('aria-hidden', 'false');
+        modal.classList.add('is-visible');
+        modal.querySelector('.gallery-modal__close').focus();
+        document.addEventListener('keydown', handleKeyDown);
+      }
+
+      function closeModal() {
+        modal.setAttribute('aria-hidden', 'true');
+        modal.classList.remove('is-visible');
+        modalImage.src = '';
+        document.removeEventListener('keydown', handleKeyDown);
+        if (lastFocused) {
+          lastFocused.focus();
+        }
+      }
+
+      function handleKeyDown(event) {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      }
+
+      cards.forEach((card) => {
+        const action = card.querySelector('.gallery-card__action');
+        action.addEventListener('click', () => openModal(card));
+      });
+
+      modal.addEventListener('click', (event) => {
+        if (event.target.dataset.close === 'true') {
+          closeModal();
+        }
+      });
+
+      closeTargets.forEach((btn) => btn.addEventListener('click', closeModal));
+    })();
+  </script>
 </body>
 </html>

@@ -5,35 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Museum of Non-Existent Things — Sources</title>
   <link rel="stylesheet" href="./style.css?v=1">
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #000;
-      color: #fff;
-    }
-
-    /* Button styling */
-    #muteButton {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background-color: rgba(255, 255, 255, 0.2);
-      border: none;
-      color: white;
-      font-size: 18px;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    #muteButton:hover {
-      background-color: rgba(255, 255, 255, 0.4);
-    }
-  </style>
 </head>
-<body class="sources-theme">
+<body>
   <audio id="bgMusic" autoplay loop>
     <source src="../music/homepage.m4a" type="audio/mpeg">
     Your browser does not support the audio element.
@@ -58,37 +31,41 @@
       button.textContent = music.muted ? '🔇' : '🔊';
     });
   </script>
-  <header>
-    <nav aria-label="Primary">
-      <a href="index.html">Home</a> |
-      <a href="gallery.html">Gallery</a> |
-      <a href="artifacts.html">Artifacts</a> |
-      <a href="sources.html" aria-current="page">Sources</a>
-    </nav>
+  <header class="site-header">
+    <div class="max-width frame">
+      <a class="logo" href="index.html">Museum of Non-Existent Things</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="sources.html" aria-current="page">Sources</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h1>Sources & References</h1>
-      <p>Below are the materials, readings, and visual inspirations referenced throughout <em>The Museum of Non-Existent Things</em>. Replace these placeholders with your final bibliography or media credits.</p>
+  <main class="max-width">
+    <div class="content-panel">
+      <section>
+        <h1>Sources & References</h1>
+        <p>Below are the materials, readings, and visual inspirations referenced throughout <em>The Museum of Non-Existent Things</em>. Replace these placeholders with your final bibliography or media credits.</p>
 
-      <h2>Written References</h2>
-      <ul>
-        <li>{Insert citation here — e.g., Plato. <em>The Republic</em>. Translated by G.M.A. Grube, Hackett Publishing, 1992.}</li>
-        <li>{Insert citation here — e.g., Campbell, Joseph. <em>The Hero with a Thousand Faces</em>. Princeton University Press, 1949.}</li>
-      </ul>
+        <h2>Written References</h2>
+        <ul>
+          <li>{Insert citation here — e.g., Plato. <em>The Republic</em>. Translated by G.M.A. Grube, Hackett Publishing, 1992.}</li>
+          <li>{Insert citation here — e.g., Campbell, Joseph. <em>The Hero with a Thousand Faces</em>. Princeton University Press, 1949.}</li>
+        </ul>
 
-      <h2>Digital & Visual Sources</h2>
-      <ul>
-        <li>{Insert source here — e.g., “Lil Miquela Official Instagram.” Instagram, https://www.instagram.com/lilmiquela/}</li>
-        <li>{Insert AI image source here — e.g., DALL·E 3 generated image, 2025.}</li>
-      </ul>
+        <h2>Digital & Visual Sources</h2>
+        <ul>
+          <li>{Insert source here — e.g., “Lil Miquela Official Instagram.” Instagram, https://www.instagram.com/lilmiquela/}</li>
+          <li>{Insert AI image source here — e.g., DALL·E 3 generated image, 2025.}</li>
+        </ul>
 
-      <h2>Music / Audio (if applicable)</h2>
-      <ul>
-        <li>{Insert credit here — e.g., Background ambience by Pixabay Music, https://pixabay.com/music.}</li>
-      </ul>
-    </section>
+        <h2>Music / Audio (if applicable)</h2>
+        <ul>
+          <li>{Insert credit here — e.g., Background ambience by Pixabay Music, https://pixabay.com/music.}</li>
+        </ul>
+      </section>
+    </div>
   </main>
 
   <footer>

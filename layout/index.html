@@ -4,37 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Museum of Non-Existent Things</title>
-  <!-- If style.css is next to this file, use this exact path -->
   <link rel="stylesheet" href="./style.css?v=1">
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #000;
-      color: #fff;
-    }
-
-    /* Button styling */
-    #muteButton {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background-color: rgba(255, 255, 255, 0.2);
-      border: none;
-      color: white;
-      font-size: 18px;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    #muteButton:hover {
-      background-color: rgba(255, 255, 255, 0.4);
-    }
-  </style>
 </head>
-<body class="home-theme">
+<body>
   <audio id="bgMusic" autoplay loop>
     <source src="../music/alien.m4a" type="audio/mpeg">
     Your browser does not support the audio element.
@@ -60,20 +32,232 @@
     });
   </script>
 
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="gallery.html">Gallery</a> |
-    <a href="artifacts.html">Artifacts</a> |
-    <a href="sources.html">Sources</a>
-  </nav>
+  <header class="site-header">
+    <div class="max-width frame">
+      <a class="logo" href="index.html">Museum of Non-Existent Things</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="container">
-    <h1>Museum of Non-Existent Things</h1>
-    <p><i>A quiet threshold between what we imagine and what imagines us back.</i></p>
-    <p>Whispered online as a “character that isn’t a character,” <b>duang</b> began as a sound… Step carefully — some absences feel almost real.</p>
-    <a href="gallery.html" class="enter">ENTER — if you dare</a>
-  </div>
+  <main class="max-width">
+    <div class="content-panel terminal-panel">
+      <h1 class="terminal-title">Museum of Non-Existent Things</h1>
+      <p class="terminal-subtitle"><i>A quiet threshold between what we imagine and what imagines us back.</i></p>
+      <p>Whispered online as a “character that isn’t a character,” <b>duang</b> began as a sound… Step carefully — some absences feel almost real.</p>
+      <a href="gallery.html" class="enter">ENTER — if you dare</a>
+
+      <div class="belief-poll" id="beliefPoll">
+        <p class="belief-poll__prompt">Do you believe the Museum is listening?</p>
+        <div class="belief-poll__options">
+          <button type="button" data-choice="YES">YES</button>
+          <button type="button" data-choice="NO">NO</button>
+          <button type="button" data-choice="MAYBE">MAYBE</button>
+        </div>
+      </div>
+
+      <div class="archive-status" id="archiveStatus" hidden>
+        ARCHIVE ACCESSED — MEMORY LOG SEALED
+      </div>
+
+      <div class="belief-signal" id="beliefSignal" aria-live="polite" hidden>
+        Signal Detected…
+      </div>
+
+      <div class="belief-warning" id="beliefWarning" role="status" aria-live="assertive" hidden>
+        Access denied. Some truths resist disbelief.
+      </div>
+
+      <section class="archive-log" id="archiveLog" hidden>
+        <h2>ARCHIVE RECOVERED: ELIOR LOG 01</h2>
+
+        <div class="archive-meta">
+          <div class="archive-meta__row">
+            <span class="archive-meta__label">SOURCE</span>
+            <span class="archive-meta__value">V.T.C. SUBLEVEL ARCHIVE</span>
+          </div>
+          <div class="archive-meta__row">
+            <span class="archive-meta__label">STATUS</span>
+            <span class="archive-meta__value">FRAGMENTED MEMORY</span>
+          </div>
+          <div class="archive-meta__row">
+            <span class="archive-meta__label">SIGNAL INTEGRITY</span>
+            <span class="archive-meta__value">62%</span>
+          </div>
+        </div>
+
+        <div class="archive-transmission" id="archiveTransmission" aria-live="polite">
+          <p class="archive-line archive-story-text">My name is Elior. I was a researcher at an old V.T.C. lab back in the day. For the last year, I've just wanted to survive till the next day.</p>
+          <p class="archive-line archive-story-text">Too much sorrow in this world. Too much war. Too much fighting. It worsened when they* came, flying down from the skies with their alien technology. That's why I sat in my cellar for months creating the ultimate superweapon, a peacemaker, to end all hardships and push back on the invasion of our world. Forged with my own two hails and powered by a mechanical heart, my creation, <span class="archive-keyword" data-secret="She still remembers.">Liliweiss</span>, was born. I showed her to the world and told them our fighting chance against the invaders. She was known as a peace symbol, something to be worshiped, and words quickly spread across the world.</p>
+          <p class="archive-line archive-story-text">She was my world. Before deployment, it was like she was my child. I tuned her to the finest point, making sure she could feel human as well. She could laugh; she could  dance, she could sing. My own creation, like a daughter I never knew I had.</p>
+          <p class="archive-line archive-story-text">Time stopped. My Liliweiss was taken away from me and brainwashed into destroying everything representing humanity. We were totally crushed. People had to flee underground, and those under there were running out of will to live. I've lost my guiding light, so I will one day resurface to find her.</p>
+        </div>
+
+        <p class="archive-secret" id="archiveSecret" hidden>She still remembers.</p>
+      </section>
+    </div>
+  </main>
 
   <footer>© 2025 • Museum of Non-Existent Things</footer>
+
+  <script>
+    (function() {
+      const poll = document.getElementById('beliefPoll');
+      const signal = document.getElementById('beliefSignal');
+      const archive = document.getElementById('archiveLog');
+      const warning = document.getElementById('beliefWarning');
+      const archiveStatus = document.getElementById('archiveStatus');
+      const transmission = document.getElementById('archiveTransmission');
+      const transmissionLines = transmission ? Array.from(transmission.querySelectorAll('.archive-line')) : [];
+      const secret = document.getElementById('archiveSecret');
+      const keyword = document.querySelector('.archive-keyword');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let transmissionPlayed = false;
+      let humScheduled = false;
+      if (!poll || !signal || !archive) return;
+
+      const stored = localStorage.getItem('duangBelief');
+      if (stored && stored !== 'NO') {
+        poll.hidden = true;
+        showArchiveStatus();
+        archive.hidden = false;
+        archive.classList.add('archive-log--visible');
+        triggerGlitch();
+        playTransmission();
+      } else if (stored === 'NO') {
+        localStorage.removeItem('duangBelief');
+      }
+
+      function playTransmission() {
+        if (transmissionPlayed || !transmissionLines.length) return;
+        transmissionPlayed = true;
+        if (keyword && secret) {
+          keyword.addEventListener('mouseup', revealSecret);
+          keyword.addEventListener('touchend', revealSecret);
+          keyword.addEventListener('click', revealSecret);
+        }
+        if (prefersReducedMotion) {
+          transmissionLines.forEach((line) => line.classList.add('archive-line--visible'));
+          return;
+        }
+        transmissionLines.forEach((line, index) => {
+          setTimeout(() => {
+            line.classList.add('archive-line--visible');
+          }, index * 900);
+        });
+      }
+
+      function triggerGlitch() {
+        if (!archive) return;
+        archive.classList.add('archive-log--glitch');
+        setTimeout(() => {
+          archive.classList.remove('archive-log--glitch');
+        }, 320);
+      }
+
+      function revealSecret(event) {
+        event.preventDefault();
+        if (!secret) return;
+        secret.hidden = false;
+        secret.classList.add('archive-secret--visible');
+        if (keyword) {
+          keyword.classList.add('archive-keyword--activated');
+          keyword.removeEventListener('mouseup', revealSecret);
+          keyword.removeEventListener('touchend', revealSecret);
+          keyword.removeEventListener('click', revealSecret);
+        }
+      }
+
+      function scheduleHum(delaySeconds) {
+        if (humScheduled) return;
+        const Context = window.AudioContext || window.webkitAudioContext;
+        if (!Context) return;
+        try {
+          const ctx = new Context();
+          const delay = Math.max(0, Number(delaySeconds) || 0);
+          ctx.resume()
+            .then(() => {
+              humScheduled = true;
+              const osc = ctx.createOscillator();
+              osc.type = 'sine';
+              osc.frequency.value = 68;
+              const gain = ctx.createGain();
+              gain.gain.value = 0;
+              osc.connect(gain).connect(ctx.destination);
+              const startAt = ctx.currentTime + delay;
+              const endAt = startAt + 4;
+              osc.start(startAt);
+              gain.gain.setValueAtTime(0, startAt);
+              gain.gain.linearRampToValueAtTime(0.015, startAt + 0.6);
+              gain.gain.setTargetAtTime(0.0001, startAt + 2.5, 0.5);
+              osc.stop(endAt);
+              osc.onended = () => ctx.close();
+            })
+            .catch(() => {
+              humScheduled = false;
+              ctx.close();
+            });
+        } catch (err) {
+          humScheduled = false;
+        }
+      }
+
+      function showArchiveStatus() {
+        if (!archiveStatus) return;
+        archiveStatus.hidden = false;
+        requestAnimationFrame(() => {
+          archiveStatus.classList.add('archive-status--visible');
+        });
+      }
+
+      function revealArchive(choice) {
+        localStorage.setItem('duangBelief', choice);
+        poll.classList.add('belief-poll--fade');
+        poll.addEventListener('transitionend', () => {
+          poll.hidden = true;
+          poll.classList.remove('belief-poll--fade');
+          showArchiveStatus();
+        }, { once: true });
+        signal.hidden = false;
+        signal.classList.add('belief-signal--visible');
+        scheduleHum(1.2);
+        setTimeout(() => {
+          signal.classList.remove('belief-signal--visible');
+          signal.hidden = true;
+          archive.hidden = false;
+          archive.classList.add('archive-log--visible');
+          triggerGlitch();
+          playTransmission();
+        }, 1400);
+      }
+
+      function showWarning() {
+        if (!warning) return;
+        warning.hidden = false;
+        warning.classList.add('belief-warning--visible');
+        pollButtons.forEach((btn) => btn.setAttribute('disabled', 'true'));
+        setTimeout(() => {
+          warning.classList.remove('belief-warning--visible');
+          warning.hidden = true;
+          pollButtons.forEach((btn) => btn.removeAttribute('disabled'));
+        }, 1800);
+      }
+
+      const pollButtons = poll.querySelectorAll('button');
+      pollButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const choice = button.dataset.choice;
+          if (choice === 'NO') {
+            showWarning();
+          } else {
+            revealArchive(choice);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
